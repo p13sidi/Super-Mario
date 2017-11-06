@@ -20,7 +20,15 @@ body {
 			create : create,
 			update : update
 		}, false, false);
+		 
+		
+		this.score=0;
+        	this.scoreText='';
+	    
+		this.bonus=0;
+        	this.bonusText='';
 
+		
 		function preload() {
 
 			//  We need this because the assets are on github pages
@@ -46,6 +54,13 @@ body {
 			game.physics.startSystem(Phaser.Physics.ARCADE);
 
 			game.stage.backgroundColor = '#5c94fc';
+			
+
+			
+			this.bonusText = game.add.text(350, 520, 'Bonus: 0', { fontSize: '20px Arial', fill: 'orange' });
+            
+                        this.scoreText = game.add.text(0, 520, 'Score: 0', { fontSize: '20px Arial', fill: 'yellow' });
+			
 
 			map = game.add.tilemap('level');
 			map.addTilesetImage('tiles', 'tiles');
@@ -84,7 +99,26 @@ body {
 			game.camera.follow(player);
 
 			cursors = game.input.keyboard.createCursorKeys();
+			
+			
+			
+			
+			 lives = game.add.group();
+            		 game.add.text(game.world.width - 340, 520, 'Lives : ', { fontSize: '20px Arial', fill: 'white' });
+            
+            			for (var i = 0; i < 3; i++) 
+	    			{
+					var pacman = lives.create(game.world.width - 235 + (30 * i), 517, 'pacman');
+					pacman.anchor.setTo(0.5, 0.5);
+					pacman.angle = 90;
+					pacman.alpha = 0.4;
+	    			}
+			
+			
 		}
+		
+		
+		
 
 		function update() {
 			game.physics.arcade.collide(player, layer);
@@ -126,6 +160,9 @@ body {
 
 		function coinOverlap(player, coin) {
 			coin.kill();
+			//eisagwgh score
+            		this.score += 10;
+            		this.scoreText.text = 'Score: ' +  this.score;
 		}
 
 		function goombaOverlap(player, goomba) {
@@ -136,6 +173,9 @@ body {
 				player.body.velocity.y = -80;
 				game.time.events.add(Phaser.Timer.SECOND, function() {
 					goomba.kill();
+					//eisagwgh bonus
+            				this.bonus += 10;
+            				this.bonusText.text = 'Bonus: ' +  this.bonus;
 				});
 			} else {
 				player.frame = 6;
