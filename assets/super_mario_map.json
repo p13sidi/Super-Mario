@@ -51,7 +51,11 @@
          "tilecount":21,
          "tileheight":16,
          "tilewidth":16
-        },
+        }, 
+        {
+         "firstgid":22,
+         "source":"untitl.tsx"
+        }],
  "tilewidth":16,
  "type":"map",
  "version":1,
