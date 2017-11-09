@@ -7,10 +7,9 @@
 body {
 	margin: 0;
 	padding: 0;
-	background-image: #000;
-	//background-image: url("assets/background.jpg");
-        //background-attachment : fixed;
-       // background-size : 100% auto;}
+	background-image: url("assets/background.jpg");
+        background-attachment : fixed;
+        background-size : 100% auto;}
 </style>
 <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script>
 </head>
@@ -103,13 +102,13 @@ body {
 			
 			
 			
-			
+			//edw prepei na epanelthw.......
 			 lives = game.add.group();
             		 game.add.text(game.world.width - 340, 520, 'Lives : ', { fontSize: '20px Arial', fill: 'white' });
             
             			for (var i = 0; i < 3; i++) 
 	    			{
-					var pacman = lives.create(game.world.width - 235 + (30 * i), 517, 'pacman');
+					var pacman = lives.create(game.world.width - 235 + (30 * i), 517, 'super_mario');
 					pacman.anchor.setTo(0.5, 0.5);
 					pacman.angle = 90;
 					pacman.alpha = 0.4;
