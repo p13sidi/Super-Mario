@@ -29,7 +29,7 @@ body {
 			update : update
 		}, false, false);
 		
-		var SuperMario = function(game){
+		var mario = function(game){
 		        // prosthesa score
 			this.score=0;
       			this.scoreText='';
@@ -99,7 +99,7 @@ body {
             
             		for (var i = 0; i < 3; i++) 
 	    		{
-				var SuperMario = lives.create(game.world.width - 235 + (30 * i), 517, 'SuperMario');
+				var mario = lives.create(game.world.width - 235 + (30 * i), 517, 'mario');
 				// pacman.anchor.setTo(0.5, 0.5);
 				// pacman.angle = 90;
 				// pacman.alpha = 0.4;
