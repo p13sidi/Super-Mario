@@ -10,8 +10,7 @@ body {
 	background-image: url("assets/background.jpg");
         background-attachment : fixed;
         background-size : 100% auto;
-	// evala background 
-	
+
 }
 </style>
 <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.min.js"></script>
@@ -90,12 +89,12 @@ body {
 			cursors = game.input.keyboard.createCursorKeys();
 			
 			// orisa to score kai to bonus kai tis parametrous tous
-			this.bonusText = game.add.text(350, 520, 'Bonus: 0', { fontSize: '20px Arial', fill: 'orange' });
-			this.scoreText = game.add.text(0, 520, 'Score: 0', { fontSize: '20px Arial', fill: 'yellow' });
+			this.bonusText = game.add.text(350, 520, 'Bonus: 0', { fontSize: '20px Arial', fill: 'red' });
+			this.scoreText = game.add.text(0, 520, 'Score: 0', { fontSize: '20px Arial', fill: 'red' });
             
 			// prosthesa zwes
 	    		lives = game.add.group();
-            		game.add.text(game.world.width - 340, 520, 'Lives : ', { fontSize: '20px Arial', fill: 'white' });
+            		game.add.text(170, 520, 'Lives : ', { fontSize: '20px Arial', fill: 'red' });
             
             		for (var i = 0; i < 3; i++) 
 	    		{
